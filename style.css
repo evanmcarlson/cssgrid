@@ -1,0 +1,69 @@
+body {
+	background-color: #333;
+  text-align: left;
+}
+
+/* accessible if grid is supported by browser */
+@supports (display: grid) {
+	.articles {
+	    display: grid;
+	    /* adds and removes columns as needed by the viewport 
+	repeat columns as many times as possible using the auto-fit algorithm */
+	    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+	    grid-gap: 1em;
+	}
+}
+
+.articles {
+	font-family: Avenir, sans-serif;
+	font-size: 80%;
+}
+
+.story {
+  	display: flex;
+	flex-flow: column;
+	background-color: #FFF;
+	border-radius: 1em;
+	padding: 2em;
+}
+
+.story h1 {
+	font-size: 1em;
+}
+
+.story p {
+	font-size: 0.5em;
+}
+
+/* Style list elements */
+.story li {
+	width: 100%;
+	list-style: none;
+	margin-left: -40px;
+	display: inline-block;
+	font-size: 0.2em;
+}
+
+.story a {
+	letter-spacing: 0.2em;
+	font-size: 0.5em;
+	text-transform: uppercase;
+	padding: 1em;
+	color: #FFF;
+	align-self: center;
+	text-decoration: none;
+	background-color: #000;
+	border-radius: 1.5em;
+}
+
+.story a:hover {
+	color: #999;
+}
+
+.story img {
+	width: 100%; /* fits the image to its container */
+	height:200px; /* keeps the image square on desktop */
+	max-height: 10em; /* keeps the image square on mobile */
+	object-fit: cover; /* maintains aspect ratio */
+	order: -1;
+}
